@@ -1,0 +1,30 @@
+ # Online Python compiler (interpreter) to run Python online.
+# Write Python 3 code in this online editor and run it.
+ip_pool = [] 
+
+assigned_ip ={}
+
+print('value of my list before loop',ip_pool)
+
+for i in range(1,101):
+    ip_address = '192.168.1' + str(i)
+    ip_pool.append(ip_address)
+# iterating through a list of ip addresses and adding a str 
+    
+# defining a request ip as device id, instructing the computer to go the list of the ip adresses and pop (0)
+def request_ip(device_id):
+    
+    ip_address_to_assign = ip_pool.pop(0)
+    assigned_ip[device_id] = ip_address_to_assign
+    
+# asking the computer to return the assigned device_id ip adress
+def return_ip(device_id):
+    return assigned_ip[device_id]
+    
+request_ip("my_cell_phone")
+request_ip("my_computer")
+request_ip("my_tablet")
+
+# printing only the asigned ip address of the returned device_id 
+print(return_ip("my_tablet"))
+    
